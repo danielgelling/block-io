@@ -1,0 +1,11 @@
+{
+    "name": "danielgelling/block-io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Gelling",
+            "email": "info@danielgelling.nl"
+        }
+    ],
+    "require": {}
+}
