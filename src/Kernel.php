@@ -17,6 +17,6 @@ class Kernel
 
 	public function get_balance()
 	{
-		Http::get('', []);
+		return Http::get('https://block.io/api/v2/get_balance/', ['api_key' => $this->apiKey]);
 	}
 }
