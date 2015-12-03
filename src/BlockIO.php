@@ -1,6 +1,8 @@
 <?php
 
-class BlockIO
+namespace BlockIO;
+
+class Kernel
 {
 	private $apiKey;
 	private $pin;

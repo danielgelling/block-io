@@ -1,5 +1,7 @@
 <?php
 
+namespace BlockIO;
+
 class Http
 {
 	public static function get($url, $parameters = [])
