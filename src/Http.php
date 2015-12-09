@@ -4,18 +4,24 @@ namespace BlockIO;
 
 class Http
 {
-	public static function get($url, $parameters = [])
+	public function __construct($apiKey, $pin, $version)
 	{
+		$this->apiKey = $apiKey;
+		$this->pin = $pin;
+		$this->version = $version;
+	}
+
+	public function get($url, $params = [])
+	{
+		$url = 'https://block.io/' . $url . '?api_key=' . $this->apiKey;
 		$curl = curl_init();
 
-		foreach($parameters as $parameter => $value)
+		foreach($params as $param => $value)
 		{
-			if(!isset($c))
-				$url .= '&' . $parameter . '=' . $value;
-			else
-				$url .= '?' . $parameter . '=' . $value;
+			if(is_array($value))
+				$value = implode(',', $value);
 
-			$c = true;
+			$url .= '&' . $param . '=' . $value;
 		}
 
 		curl_setopt_array($curl, array(
@@ -26,6 +32,6 @@ class Http
 		$response = curl_exec($curl);
 		curl_close($curl);
 
-		return $response;
+		return json_decode($response);
 	}
 }
