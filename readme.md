@@ -13,7 +13,7 @@ This repository contains a class which can be used for [Block.io's API](https://
 
 Simply use [composer](https://getcomposer.org) to install this repository into your project.
 
-	composer require danielgelling/block-io:~1.*
+	composer require danielgelling/block-io:1.*
 
 ### Downloading the repository
 
