@@ -31,27 +31,27 @@ class Factory
 
 	public function get_balance()
 	{
-		return $this->connection->get('api/v2/get_balance/');
+		return $this->connection->get('get_balance');
 	}
 
 	public function get_new_address($params = [])
 	{
-		return $this->connection->get('api/v2/get_new_address/', $params);
+		return $this->connection->get('get_new_address', $params);
 	}
 
 	public function get_my_addresses()
 	{
-		return $this->connection->get('/api/v2/get_my_addresses');
+		return $this->connection->get('get_my_addresses');
 	}
 
 	public function get_address_balance($params = [])
 	{
-		return $this->connection->get('/api/v2/get_address_balance', $params);
+		return $this->connection->get('get_address_balance', $params);
 	}
 
 	public function get_address_by_label($params)
 	{
-		return $this->connection->get('/api/v2/get_address_by_label', $params);
+		return $this->connection->get('get_address_by_label', $params);
 	}
 
 	/**
@@ -62,22 +62,22 @@ class Factory
 
 	public function withdraw($params)
 	{
-		return $this->connection->get('/api/v2/withdraw', $params);
+		return $this->connection->get('withdraw', $params);
 	}
 
 	public function withdraw_from_addresses($params)
 	{
-		return $this->connection->get('/api/v2/withdraw_from_addresses', $params);
+		return $this->connection->get('withdraw_from_addresses', $params);
 	}
 
 	public function withdraw_from_labels($params)
 	{
-		return $this->connection->get('/api/v2/withdraw_from_labels', $params);
+		return $this->connection->get('withdraw_from_labels', $params);
 	}
 
 	public function get_network_fee_estimate($params)
 	{
-		return $this->connection->get('/api/v2/get_network_fee_estimate', $params);
+		return $this->connection->get('get_network_fee_estimate', $params);
 	}
 
 	/**
@@ -88,17 +88,17 @@ class Factory
 
 	public function archive_addresses($params)
 	{
-		return $this->connection->get('/api/v2/archive_addresses', $params);
+		return $this->connection->get('archive_addresses', $params);
 	}
 
 	public function unarchive_addresses($params)
 	{
-		return $this->connection->get('/api/v2/unarchive_addresses', $params);
+		return $this->connection->get('unarchive_addresses', $params);
 	}
 
 	public function get_my_archived_addresses($params)
 	{
-		return $this->connection->get('/api/v2/get_my_archived_addresses', $params);
+		return $this->connection->get('get_my_archived_addresses', $params);
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Factory
 
 	public function get_current_price($params = [])
 	{
-		return $this->connection->get('/api/v2/get_current_price', $params);
+		return $this->connection->get('get_current_price', $params);
 	}
 
 	/**
@@ -120,12 +120,12 @@ class Factory
 
 	public function is_green_address($params)
 	{
-		return $this->connection->get('/api/v2/is_green_address', $params);
+		return $this->connection->get('is_green_address', $params);
 	}
 
 	public function is_green_transaction($params)
 	{
-		return $this->connection->get('/api/v2/is_green_transaction', $params);
+		return $this->connection->get('is_green_transaction', $params);
 	}
 
 	/**
@@ -136,7 +136,7 @@ class Factory
 
 	public function get_transactions($params)
 	{
-		return $this->connection->get('/api/v2/get_transactions', $params);
+		return $this->connection->get('get_transactions', $params);
 	}
 
 

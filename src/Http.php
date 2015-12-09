@@ -13,7 +13,10 @@ class Http
 
 	public function get($url, $params = [])
 	{
-		$url = 'https://block.io/' . $url . '?api_key=' . $this->apiKey;
+		$url = 'https://block.io/api/v' . 
+				$this->version . '/' . $url . '?api_key=' . 
+				$this->apiKey . '&pin=' . $this->pin;
+
 		$curl = curl_init();
 
 		foreach($params as $param => $value)
