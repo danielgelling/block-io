@@ -2,7 +2,7 @@
 
 namespace BlockIO;
 
-class Kernel
+class Factory
 {
 	private $apiKey;
 	private $pin;
