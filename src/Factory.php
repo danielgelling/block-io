@@ -14,6 +14,7 @@ class Factory
 		$this->apiKey = $apiKey;
 		$this->pin = $pin;
 		$this->version = $version;
+
 		$this->connect();
 	}
 
@@ -22,8 +23,121 @@ class Factory
 		$this->connection = new Http($this->apiKey, $this->pin, $this->version);
 	}
 
+	/**
+	*
+	* Address methods
+	*
+	**/
+
 	public function get_balance()
 	{
-		return $this->connection->get('https://block.io/api/v2/get_balance/', ['api_key' => $this->apiKey]);
+		return $this->connection->get('api/v2/get_balance/');
 	}
+
+	public function get_new_address($params = [])
+	{
+		return $this->connection->get('api/v2/get_new_address/', $params);
+	}
+
+	public function get_my_addresses()
+	{
+		return $this->connection->get('/api/v2/get_my_addresses');
+	}
+
+	public function get_address_balance($params = [])
+	{
+		return $this->connection->get('/api/v2/get_address_balance', $params);
+	}
+
+	public function get_address_by_label($params)
+	{
+		return $this->connection->get('/api/v2/get_address_by_label', $params);
+	}
+
+	/**
+	*
+	* Withdrawal methods
+	*
+	**/
+
+	public function withdraw($params)
+	{
+		return $this->connection->get('/api/v2/withdraw', $params);
+	}
+
+	public function withdraw_from_addresses($params)
+	{
+		return $this->connection->get('/api/v2/withdraw_from_addresses', $params);
+	}
+
+	public function withdraw_from_labels($params)
+	{
+		return $this->connection->get('/api/v2/withdraw_from_labels', $params);
+	}
+
+	public function get_network_fee_estimate($params)
+	{
+		return $this->connection->get('/api/v2/get_network_fee_estimate', $params);
+	}
+
+	/**
+	*
+	* Archive methods
+	*
+	**/
+
+	public function archive_addresses($params)
+	{
+		return $this->connection->get('/api/v2/archive_addresses', $params);
+	}
+
+	public function unarchive_addresses($params)
+	{
+		return $this->connection->get('/api/v2/unarchive_addresses', $params);
+	}
+
+	public function get_my_archived_addresses($params)
+	{
+		return $this->connection->get('/api/v2/get_my_archived_addresses', $params);
+	}
+
+	/**
+	*
+	* Current price methods
+	*
+	**/
+
+	public function get_current_price($params = [])
+	{
+		return $this->connection->get('/api/v2/get_current_price', $params);
+	}
+
+	/**
+	*
+	* BlockIO Green address methods
+	*
+	**/
+
+	public function is_green_address($params)
+	{
+		return $this->connection->get('/api/v2/is_green_address', $params);
+	}
+
+	public function is_green_transaction($params)
+	{
+		return $this->connection->get('/api/v2/is_green_transaction', $params);
+	}
+
+	/**
+	*
+	* Transaction methods
+	*
+	**/
+
+	public function get_transactions($params)
+	{
+		return $this->connection->get('/api/v2/get_transactions', $params);
+	}
+
+
 }
