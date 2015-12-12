@@ -147,9 +147,13 @@ class Factory
 
 	public function create_notification($params)
 	{
-		return $this->connection->get('get_transactions', $params);
+		return $this->connection->get('create_notification', $params);
 	}
 
+	public function get_notifications($params)
+	{
+		return $this->connection->get('get_notifications', $params);
+	}
 
 
 }
