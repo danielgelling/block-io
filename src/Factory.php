@@ -139,5 +139,17 @@ class Factory
 		return $this->connection->get('get_transactions', $params);
 	}
 
+	/**
+	*
+	* Webhook methods
+	*
+	**/
+
+	public function create_notification($params)
+	{
+		return $this->connection->get('get_transactions', $params);
+	}
+
+
 
 }
